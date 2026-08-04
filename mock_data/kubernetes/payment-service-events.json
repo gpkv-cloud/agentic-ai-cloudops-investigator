@@ -1,0 +1,58 @@
+{
+  "service": "payment-service",
+  "namespace": "payments",
+  "workload": {
+    "kind": "Deployment",
+    "name": "payment-service",
+    "desired_replicas": 3,
+    "available_replicas": 3,
+    "current_image": "registry.example.com/payment-service:1.19.0",
+    "previous_image": "registry.example.com/payment-service:1.18.2"
+  },
+  "pods": [
+    {
+      "name": "payment-service-7d9f6c8c9b-2lxhn",
+      "status": "Running",
+      "ready": true,
+      "restart_count": 1
+    },
+    {
+      "name": "payment-service-7d9f6c8c9b-kq82m",
+      "status": "Running",
+      "ready": true,
+      "restart_count": 0
+    },
+    {
+      "name": "payment-service-7d9f6c8c9b-x9n4p",
+      "status": "Running",
+      "ready": true,
+      "restart_count": 1
+    }
+  ],
+  "events": [
+    {
+      "timestamp": "2026-08-04T08:46:03Z",
+      "type": "Normal",
+      "reason": "ScalingReplicaSet",
+      "message": "Scaled up replica set payment-service-7d9f6c8c9b to 3"
+    },
+    {
+      "timestamp": "2026-08-04T08:48:41Z",
+      "type": "Normal",
+      "reason": "DeploymentComplete",
+      "message": "Deployment payment-service successfully rolled out"
+    },
+    {
+      "timestamp": "2026-08-04T09:03:18Z",
+      "type": "Warning",
+      "reason": "Unhealthy",
+      "message": "Readiness probe failed: HTTP probe returned status code 500"
+    },
+    {
+      "timestamp": "2026-08-04T09:12:26Z",
+      "type": "Warning",
+      "reason": "BackOff",
+      "message": "Back-off restarting failed container payment-service"
+    }
+  ]
+}

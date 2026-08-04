@@ -1,0 +1,19 @@
+{
+  "incident_id": "INC-2026-08-04-001",
+  "title": "Payment service returning 500 errors after deployment",
+  "reported_at": "2026-08-04T09:15:00Z",
+  "reported_by": "synthetic-monitor",
+  "environment": "production",
+  "service": "payment-service",
+  "namespace": "payments",
+  "symptoms": [
+    "HTTP 500 errors increased",
+    "Checkout requests are failing",
+    "Payment API latency increased"
+  ],
+  "suspected_change_window": {
+    "start": "2026-08-04T08:45:00Z",
+    "end": "2026-08-04T09:10:00Z"
+  },
+  "safe_scope": "read-only investigation only"
+}
